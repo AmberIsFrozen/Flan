@@ -12,7 +12,6 @@ import io.github.flemmli97.flan.event.WorldEvents;
 import io.github.flemmli97.flan.fabric.integration.HarvestWithEase;
 import io.github.flemmli97.flan.fabric.platform.integration.claiming.FlanProtectionProvider;
 import io.github.flemmli97.flan.fabric.platform.integration.playerability.PlayerAbilityEvents;
-import io.github.flemmli97.flan.platform.integration.create.CreateCompat;
 import io.github.flemmli97.flan.platform.integration.webmap.BluemapIntegration;
 import io.github.flemmli97.flan.platform.integration.webmap.DynmapIntegration;
 import io.github.flemmli97.flan.player.PlayerDataHandler;
@@ -82,8 +81,6 @@ public class FlanFabric implements ModInitializer {
             HarvestWithEase.init();
         if (Flan.commonProtApi)
             FlanProtectionProvider.register();
-        if (FabricLoader.getInstance().isModLoaded("create"))
-            CreateCompat.init();
         ClaimCriterias.init();
     }
 

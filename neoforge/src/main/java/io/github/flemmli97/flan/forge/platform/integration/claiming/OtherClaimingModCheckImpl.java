@@ -7,7 +7,6 @@ import io.github.flemmli97.flan.Flan;
 import io.github.flemmli97.flan.claim.Claim;
 import io.github.flemmli97.flan.claim.ClaimStorage;
 import io.github.flemmli97.flan.config.ConfigHandler;
-import io.github.flemmli97.flan.platform.integration.claiming.FTBChunks;
 import io.github.flemmli97.flan.platform.integration.claiming.OtherClaimingModCheck;
 import io.github.flemmli97.flan.player.display.DisplayBox;
 import net.minecraft.core.BlockPos;
@@ -24,7 +23,6 @@ import java.util.Set;
 public class OtherClaimingModCheckImpl implements OtherClaimingModCheck {
 
     public void findConflicts(Claim claim, Set<DisplayBox> set) {
-        FTBChunks.findConflicts(claim, set);
         if (Flan.mineColonies && ConfigHandler.config.mineColoniesCheck) {
             ServerLevel level = claim.getWorld();
             int[] chunks = ClaimStorage.getChunkPos(claim);

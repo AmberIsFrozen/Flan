@@ -196,7 +196,7 @@ public class BuySellHandler {
         obj.addProperty("sellType", this.sellType.toString());
         obj.addProperty("buyValue", this.buyAmount);
         obj.addProperty("sellValue", this.sellAmount);
-        obj.add("ingredient", this.ingredient.toJson(true));
+        obj.add("ingredient", Ingredient.CODEC.encodeStart(JsonOps.INSTANCE, this.ingredient).get().orThrow());
         return obj;
     }
 
